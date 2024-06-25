@@ -1,14 +1,18 @@
 import math
-a = float(input())
-b = float(input())
-c = float(input())
+a, b, c = input().split()
 
-if a != 0:
-	r1 = (-b + math.sqrt((b**2) - (4 * a * c))) / (2 * a)
-	if r1 < 0:
+a = float(a)
+b = float(b)
+c = float(c)
+
+delta = (b**2) - (4*a*c)
+
+if delta > 0:
+	if a == 0:
 		print("Impossivel calcular")
 	else:
-		r2 = (-b - math.sqrt((b**2) - (4 * a * c))) / (2 * a)
+		r1 = (-b + math.sqrt(delta)) / (2 * a)
+		r2 = (-b - math.sqrt(delta)) / (2 * a)
 		print(f"R1 = {r1:.5f}")
 		print(f"R2 = {r2:.5f}")
 else:
