@@ -1,7 +1,7 @@
 x = float(input())
 
 if x >= 0 and x <= 25:
-	print("Intervalo (0,25]")
+	print("Intervalo [0,25]")
 elif x > 25 and x <= 50:
 	print("Intervalo (25,50]")
 elif x > 50 and x <= 75:
