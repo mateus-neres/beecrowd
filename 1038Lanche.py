@@ -1,6 +1,4 @@
-codigo, quantidade = input().split()
-codigo = int(codigo)
-quantidade = int(quantidade)
+codigo, quantidade = map(int, input().strip().split())
 
 lista = [
     [1,'Cachorro Quente', 4.00],

@@ -1,8 +1,4 @@
-n1, n2, n3, n4 = input().split()
-n1 = float(n1)
-n2 = float(n2)
-n3 = float(n3)
-n4 = float(n4)
+n1, n2, n3, n4 = map(float, input().strip().split())
 
 peso_n1 = 2
 peso_n2 = 3

@@ -1,8 +1,4 @@
-a, b, c, d = input().split()
-a = int(a)
-b = int(b)
-c = int(c)
-d = int(d)
+a, b, c, d = map(int, input().strip().split())
 
 if b > c and d > a:
 	if (c + d ) > (a + b):

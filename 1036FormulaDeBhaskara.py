@@ -1,9 +1,5 @@
 import math
-a, b, c = input().split()
-
-a = float(a)
-b = float(b)
-c = float(c)
+a, b, c = map(float, input().strip().split())
 
 delta = (b**2) - (4*a*c)
 
