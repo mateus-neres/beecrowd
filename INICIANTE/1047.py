@@ -1,36 +1,22 @@
 hora_inicio, minuto_inicio, hora_fim, minuto_fim = map(int, input().strip().split())
-dia = 24
-hora = 60
 
-if hora_inicio >= hora_fim and minuto_inicio >= minuto_fim:
+# Calcula o tempo total em minutos
+inicio_total_minutos = hora_inicio * 60 + minuto_inicio
+fim_total_minutos = hora_fim * 60 + minuto_fim
 
-    hora_fim = hora_fim + dia
-    minuto_fim = minuto_fim + hora
-    diferenca_hora = hora_fim - hora_inicio
-    diferenca_minuto =  minuto_fim - minuto_inicio
 
-    if diferenca_hora>= dia:
-        diferenca_minuto = 0
-        print(f"O JOGO DUROU {diferenca_hora} HORA(S) E {diferenca_minuto} MINUTO(S)")
-
-    elif diferenca_hora <= 1:
-        diferenca_hora = 0
-        diferenca_minuto = hora - diferenca_minuto
-        print(f"O JOGO DUROU {diferenca_hora} HORA(S) E {diferenca_minuto} MINUTO(S)")
-
+# Calcula a duração em minutos, considerando que pode passar de um dia para o outro
+if fim_total_minutos >= inicio_total_minutos:
+    duracao_total_minutos = fim_total_minutos - inicio_total_minutos
 else:
-    diferenca_hora = hora_fim - hora_inicio
-    diferenca_minuto =  minuto_fim - minuto_inicio
-    diferenca_minuto =  minuto_fim - minuto_inicio
+    duracao_total_minutos = (24 * 60 - inicio_total_minutos) + fim_total_minutos
 
-    if minuto_inicio >= minuto_fim:
-        minuto_fim = minuto_fim + hora
-        diferenca_minuto =  minuto_fim - minuto_inicio
-        if diferenca_hora>= dia:
-            diferenca_minuto = 0
-            print(f"O JOGO DUROU {diferenca_hora} HORA(S) E {diferenca_minuto} MINUTO(S)")
+# Se a duração for 0 minutos, ajusta para 1 minuto
+if duracao_total_minutos == 0:
+    duracao_total_minutos = 1
 
-        elif diferenca_hora <= 1:
-            diferenca_hora = 0
-            diferenca_minuto = hora - diferenca_minuto
-            print(f"O JOGO DUROU {diferenca_hora} HORA(S) E {diferenca_minuto} MINUTO(S)")
+# Converte a duração total de minutos em horas e minutos
+duracao_horas = duracao_total_minutos // 60
+duracao_minutos = duracao_total_minutos % 60
+
+print(f"O JOGO DUROU {duracao_horas} HORA(S) E {duracao_minutos} MINUTO(S)")
