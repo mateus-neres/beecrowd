@@ -1,22 +1,22 @@
-hora_inicio, minuto_inicio, hora_fim, minuto_fim = map(int, input().strip().split())
+hora_inicio, minuto_inicio, hora_final, minuto_final = map(int, input().strip().split())
 
-# Calcula o tempo total em minutos
-inicio_total_minutos = hora_inicio * 60 + minuto_inicio
-fim_total_minutos = hora_fim * 60 + minuto_fim
+uma_hora = 60
+um_dia = 24
 
 
-# Calcula a duração em minutos, considerando que pode passar de um dia para o outro
-if fim_total_minutos >= inicio_total_minutos:
-    duracao_total_minutos = fim_total_minutos - inicio_total_minutos
+
+if hora_inicio <= hora_final:
+
+    total_minutos_inicio = (hora_inicio + um_dia) * uma_hora + minuto_inicio
+    total_minutos_final = hora_final * uma_hora + minuto_final
+    horas = (total_minutos_inicio // uma_hora) - (total_minutos_final // uma_hora)
+    minutos = (total_minutos_final % uma_hora) - (total_minutos_inicio % uma_hora) 
+    print(horas)
+    print(minutos)  
 else:
-    duracao_total_minutos = (24 * 60 - inicio_total_minutos) + fim_total_minutos
-
-# Se a duração for 0 minutos, ajusta para 1 minuto
-if duracao_total_minutos == 0:
-    duracao_total_minutos = 1
-
-# Converte a duração total de minutos em horas e minutos
-duracao_horas = duracao_total_minutos // 60
-duracao_minutos = duracao_total_minutos % 60
-
-print(f"O JOGO DUROU {duracao_horas} HORA(S) E {duracao_minutos} MINUTO(S)")
+    total_minutos_inicio = hora_inicio * uma_hora + minuto_inicio
+    total_minutos_final = hora_final * uma_hora + minuto_final
+    horas = (total_minutos_final // uma_hora) - (total_minutos_inicio // uma_hora)
+    minutos = (total_minutos_final % uma_hora) - (total_minutos_inicio % uma_hora)
+    print(horas)
+    print(minutos)
