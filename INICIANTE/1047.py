@@ -10,7 +10,7 @@ total_minutos_final = hora_final * uma_hora + minuto_final
 # Calculando a diferença em minutos
 if total_minutos_inicio <= total_minutos_final:
     duracao_em_minutos = (total_minutos_final + (um_dia * uma_hora)) - total_minutos_inicio
-    if duracao_em_minutos >= um_dia:
+    if duracao_em_minutos // um_dia >= um_dia * uma_hora:
         duracao_em_minutos = total_minutos_final - total_minutos_inicio
 else:
     duracao_em_minutos = (um_dia * uma_hora) - (total_minutos_inicio - total_minutos_final)
