@@ -1,6 +1,11 @@
-S = 1
+S = 0.0
 
-for i in range(2, 100 + 1):
-    S += (1/i)
+
+denominador = 1
+
+while denominador <= 100:
+    S += 1 / denominador
+
+    denominador += 1
 
 print(f"{S:.2f}")
