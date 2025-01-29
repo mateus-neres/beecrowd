@@ -1,14 +1,20 @@
-contador = 0
-total = 0
+N = int(input())
 
-for i in range(6):
+for _ in range(N):
+    X = int(input())
+
+    divisores = []
+
+    for i in range(1, X):
+        if X % i == 0:
+            divisores.append(i)
     
-    entrada = float(input())
-    if entrada > 0:
-        contador += 1
-        total += entrada
- 
-media = total / contador       
-    
-print(f'{contador} valores positivos')
-print(f'{media:.1f}')
+    sum = 0
+    for item in divisores:
+        sum += item
+
+    if sum == X:
+        print(f"{X} eh perfeito")
+    else:
+        print(f"{X} nao eh perfeito")
+        
